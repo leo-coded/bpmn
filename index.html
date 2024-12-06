@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BPMN 2.0</title>
+
+  <link rel="stylesheet" href="./dist/vendor/bpmn-js/assets/diagram-js.css" />
+  <link rel="stylesheet" href="./dist/vendor/bpmn-js/assets/bpmn-js.css" />
+  <link rel="stylesheet" href="./dist/vendor/bpmn-js/assets/bpmn-font/css/bpmn-embedded.css" />
+  <link rel="stylesheet" href="./dist/vendor/bpmn-js-token-simulation/assets/css/bpmn-js-token-simulation.css" />
+  <link rel="stylesheet" href="./dist/vendor/bpmn-js-properties-panel/assets/properties-panel.css" />
+  <link rel="stylesheet" href="./style.css" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BPMN 2.0 Simulator" />
+  <meta property="og:title" content="BPMN Simulator and Modeler" />
+  <meta property="og:description" content="Simulate your BPMN diagrams with BPMN 2.0 Simulator and Modeler. Understand and learn BPMN execution semantics one token at a time." />
+
+  <script>
+    var baseUrl = window.location.origin;
+    var diagramUrl = baseUrl + '/dist/example/sample.bpmn';
+    var diagramUrlEncoded = encodeURIComponent(diagramUrl);
+    if (!window.location.search.includes('pp=1')) {
+      // To enable the simulation on load just uncomment the line bellow
+      // window.location.replace(`?pp=1&diagram=${diagramUrlEncoded}&e=1`);
+      window.location.replace(`?pp=1&diagram=${diagramUrlEncoded}`);
+    }
+  </script>
+</head>
+<body>
+  <div class="canvas-parent">
+    <div class="canvas" id="canvas">
+      <div class="drop-message"><strong>Dica:</strong> Arraste e solte um diagrama para abrir</div>
+    </div>
+
+    <div class="properties-panel" id="properties-panel">
+      <div class="properties-panel-resizer" id="properties-panel-resizer" title="Toggle properties panel" draggable="true">
+         <div class="properties-panel-resize-handle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="links bottom-links">
+    <button class="link" id="download-button" style="cursor: pointer;">Baixar Diagrama</button>
+  </div>
+
+  <!-- <script src="./dist/modeler.js"></script> -->
+  <script src="./dist/modeler.js"></script>
+</body>
+</html>
